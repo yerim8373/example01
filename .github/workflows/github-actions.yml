@@ -68,7 +68,8 @@ jobs:
 
       # gradle build
       - name: Build with Gradle
-        run: ./gradlew build -x test
+        run: ./gradlew clean build --exclude-task test # 테스트 스킵하고 빌드
+#        run: ./gradlew build -x test
 
       # docker build & push to production
       - name: Docker build & push to prod
